@@ -1,5 +1,7 @@
 package ru.java.courses;
 
+import com.sun.tools.javac.Main;
+
 class Lesson2 {
 
     /**
@@ -11,8 +13,10 @@ class Lesson2 {
      * @return возвращаем только целую часть от полученного результата,
      * хвост отбрасываем без откругления
      */
-    static int formula(int x) {
-        return 0;
+    static int formula (int x) {
+
+        double y = Math.sqrt(13*x + 13/x);
+        return (int) y;
     }
 
     /**
@@ -29,7 +33,22 @@ class Lesson2 {
      * @return возвращаем инициалы в верхнем регистре разделенные точкой, как в примере выше
      */
     static String initials(String fullName) {
-        return null;
+        String [] a = fullName.split(" ");
+
+        char result1 = a[0].charAt(0);
+        char result2 = a[1].charAt(0);
+        char result3 = a[2].charAt(0);
+        return (result1 +"."+result2+"."+result3+".").toUpperCase();
+
+            }
+
+
+    public static void main(String[] args) {
+        int g = formula(5);
+        System.out.println(g);
+
+        System.out.println(initials("Гафаров Елена Анатольевна"));
+
     }
 
 }
